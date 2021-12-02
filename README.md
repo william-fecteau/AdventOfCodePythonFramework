@@ -12,6 +12,10 @@ I created this python AoC framework to handle every basic action that you need t
 - Executing your solution by part one day at a time or all days at the same time
 - Timing the execution of your program to compare run times
 
+## Example usage
+- https://github.com/AggroBane/AdventOfCode2020
+- https://github.com/AggroBane/AdventOfCode2021
+
 ## Prerequisites
 This framework was created using ```python 3.8.10```, i did not test with any other version
 
@@ -46,6 +50,7 @@ class DayTemplate(AOCDay):
     def part2(self):
         return 0
 ```
+*Note: ```self.inputData``` contains the list of every line from your input (Splitted on '\n')*
 
 ### Start a day 
 Create your day file -> Download your input -> Time for you to program!
