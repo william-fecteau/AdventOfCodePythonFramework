@@ -53,21 +53,26 @@ class DayTemplate(AOCDay):
 *Note: ```self.inputData``` contains the list of every line from your input (Splitted on '\n')*
 
 ### Start a day 
-Create your day file -> Download your input -> Time for you to program!
+Create your day file -> Time for you to program!
 
 ### Run a day
-Check if your day was started or else its gonna start it -> Read the input file -> Run the ```common``` function -> Run the ```part1``` function -­> Run the ```part2``` function.
+Check if your day was started or else its gonna start it -> Download the input file (if not present) -> Read the input file -> Run the ```common``` function -> Run the ```part1``` function -> Run the ```part2``` function.
 
 ## How to use it
 ### Start a day
 To start a day, use this command : ```python3 main.py <dayNumber>```
 
-This will download your day input (if its not already there) and create your day file for you to program in.
 
-The input file will be downloaded in ```./inputs/day<dayNumber>.txt``` (Normally you don't need to touch this file! It will be parsed automatically)
+If its not already there, this will create your day file for you to program in.
+
+
 Your day file will be in ```./days/day<dayNumber>.py``` (This is where you program!)
 
 ### Run a day
 To run a day, use this command : ```python3 main.py <dayNumber>``` (Notice it's the same command as how to start a day)
 
-If your day was already started (Input downloaded and day file created), running this command again will actually run this day and produce the output in the console and at ```./outputs/day<dayNumber>.txt```
+
+The input file will be downloaded in ```./inputs/day<dayNumber>.txt``` (Normally you don't need to touch this file! It will be parsed automatically)
+
+
+After downloading the input, it will run your code and produce the output in the console and at ```./outputs/day<dayNumber>.txt```
