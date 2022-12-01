@@ -42,6 +42,7 @@ from utils.aoc_utils import AOCDay, day
 class DayTemplate(AOCDay):
     def common(self):
         #print(self.inputData)
+        #print(self.rawData)
         return 0
 
     def part1(self):
@@ -50,7 +51,7 @@ class DayTemplate(AOCDay):
     def part2(self):
         return 0
 ```
-*Note: ```self.inputData``` contains the list of every line from your input (Splitted on '\n')*
+*Note: ```self.inputData``` contains the list of every line from your input (Splitted on '\n') and ```self.rawData``` contains all the data in a single string (Including all the '\n')*
 
 
 ## How to use it
