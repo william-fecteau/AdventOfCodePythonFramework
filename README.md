@@ -16,6 +16,7 @@ I created this python AoC framework to handle every basic action that you need t
 - https://github.com/william-fecteau/AdventOfCode2020
 - https://github.com/william-fecteau/AdventOfCode2021
 - https://github.com/william-fecteau/AdventOfCode2022
+- https://github.com/william-fecteau/advent-of-code-2023
 
 ## Prerequisites
 For it to work, you need to have two packages installed ```requests``` and ```python-dotenv``` which you can install using this command : 
