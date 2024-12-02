@@ -5,13 +5,6 @@ import time
 import requests
 
 
-def day(dayNumber):
-    def day_decorator(cls):
-        AOCDays.getInstance().addDay(dayNumber, cls)
-        return cls
-    return day_decorator
-
-
 def downloadInput(dayNum, year, sessionToken, inputPath):
     url = "https://adventofcode.com/" + \
         str(year) + "/day/" + str(dayNum) + "/input"
@@ -37,19 +30,15 @@ class AOCDay:
         self.dayNumber = int(dayNumber)
         self.sessionToken = sessionToken
 
-        fileName = "day" + str(dayNumber) + ".txt"
+        fileName = f"day{dayNumber}.txt"
 
         # Configuring inputs
-        self.inputPath = os.getcwd() + "/inputs"
-        if not os.path.exists(self.inputPath):
-            os.makedirs(self.inputPath)
-        self.inputPath += "/" + fileName
+        os.makedirs(os.path.join(os.getcwd(), year, "inputs"), exist_ok=True)
+        self.inputPath = os.path.join(os.getcwd(), year, "inputs", fileName)
 
         # Configuring outputs
-        self.outputPath = os.getcwd() + "/outputs"
-        if not os.path.exists(self.outputPath):
-            os.makedirs(self.outputPath)
-        self.outputPath += "/" + fileName
+        os.makedirs(os.path.join(os.getcwd(), year, "outputs"), exist_ok=True)
+        self.outputPath = os.path.join(os.getcwd(), year, "outputs", fileName)
 
     def run(self):
         # Getting input
@@ -74,17 +63,16 @@ class AOCDay:
 
         # Writing output
         self.writeOutput(
-            "====================== Day" +
-            str(self.dayNumber) + " ======================",
-            "Common time (ms) : " + str(time0),
-            "---------------------------------------------------",
-            "Part 1 : " + str(answer1),
-            "Time (ms): " + str(time1),
-            "---------------------------------------------------",
-            "Part 2 : " + str(answer2),
-            "Time (ms): " + str(time2),
-            "---------------------------------------------------",
-            "Total time (ms): " + str(totalTime)
+            f"====================== Day {self.dayNumber} ======================",
+            f"Common time (ms) : {time0}",
+            f"---------------------------------------------------",
+            f"Part 1 : {answer1}",
+            f"Time (ms): {time1}",
+            f"---------------------------------------------------",
+            f"Part 2 : {answer2}",
+            f"Time (ms): {time2}",
+            f"---------------------------------------------------",
+            f"Total time (ms): {totalTime}"
         )
 
     def downloadInput(self):
@@ -97,7 +85,6 @@ class AOCDay:
                       self.sessionToken, self.inputPath)
 
     def readInput(self):
-
         # Opening filestream
         file = open(self.inputPath, "r")
 
@@ -132,23 +119,3 @@ class AOCDay:
 
     def part2(self):
         pass
-
-
-class AOCDays:
-    instance = None
-    days = []
-
-    def __init__(self):
-        self.days = [0 for i in range(26)]
-
-    def addDay(self, dayNumber, cls):
-        self.days[dayNumber] = cls
-
-    def getDay(self, dayNumber):
-        return self.days[dayNumber]
-
-    @classmethod
-    def getInstance(cls):
-        if not cls.instance:
-            cls.instance = AOCDays()
-        return cls.instance

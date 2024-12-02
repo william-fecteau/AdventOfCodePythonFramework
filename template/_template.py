@@ -1,7 +1,5 @@
-from utils.aoc_utils import AOCDay, day
+from utils.aoc_utils import AOCDay
 
-
-@day(0)
 class DayTemplate(AOCDay):
     def common(self):
         # print(self.inputData)
