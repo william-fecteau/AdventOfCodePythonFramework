@@ -13,15 +13,7 @@ I created this python AoC framework to handle every basic action that you need t
 - Timing the execution of your program to compare run times
 
 ## Example usage
-- https://github.com/william-fecteau/AdventOfCode2020
-- https://github.com/william-fecteau/AdventOfCode2021
-- https://github.com/william-fecteau/AdventOfCode2022
-- https://github.com/william-fecteau/advent-of-code-2023
-
-## Prerequisites
-For it to work, you need to have two packages installed ```requests``` and ```python-dotenv``` which you can install using this command : 
-```pip install -r requirements.txt```
-*Of course you need to have pip installed also*
+- https://github.com/william-fecteau/AdventOfCode
 
 ## Installation
 1. Clone the repo
@@ -37,9 +29,8 @@ AOC_YEAR=2021
 ## Framework flow
 A day file is created with this template :
 ```
-from utils.aoc_utils import AOCDay, day
+from utils.aoc_utils import AOCDay
 
-@day(0)
 class DayTemplate(AOCDay):
     def common(self):
         #print(self.inputData)
@@ -57,19 +48,19 @@ class DayTemplate(AOCDay):
 
 ## How to use it
 ### Start a day
-To start a day, use this command : ```python3 main.py <dayNumber>```
+To start a day, use this command : ```python main.py <dayNumber>```
 
 
 If its not already there, this will create your day file for you to program in.
 
 
-Your day file will be in ```./days/day<dayNumber>.py``` (This is where you program!)
+Your day file will be in ```./<year>/day<dayNumber>.py``` (This is where you program!)
 
 ### Run a day
-To run a day, use this command : ```python3 main.py <dayNumber>``` (Notice it's the same command as how to start a day)
+To run a day, use this command : ```python main.py <dayNumber>``` (Notice it's the same command as how to start a day)
 
 
-The input file will be downloaded in ```./inputs/day<dayNumber>.txt``` (Normally you don't need to touch this file! It will be parsed automatically)
+The input file will be downloaded in ```./<year>/inputs/day<dayNumber>.txt``` (Normally you don't need to touch this file! It will be parsed automatically)
 
 
-After downloading the input, it will run your code and produce the output in the console and at ```./outputs/day<dayNumber>.txt```
+After downloading the input, it will run your code and produce the output in the console and at ```./<year>/outputs/day<dayNumber>.txt```
