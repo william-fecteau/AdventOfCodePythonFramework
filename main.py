@@ -39,7 +39,7 @@ if __name__ == "__main__":
     os.makedirs(yearDir, exist_ok=True)
 
     # Validation
-    dayFilePath = os.path.join(yearDir, f"{dayNumber}.py")
+    dayFilePath = os.path.join(yearDir, f"day{dayNumber}.py")
     if dayNumber <= 0 or dayNumber > 25:
         print("Day must be between 0 and 25")
         sys.exit(1)
@@ -75,7 +75,7 @@ if __name__ == "__main__":
 
         for dayNum in daysRun:
             # Getting the good days instance
-            module = importlib.import_module(f"{year}.{dayNum}")
+            module = importlib.import_module(f"{year}.day{dayNum}")
             DayClass = getattr(module, f"Day{dayNum}")
 
             try:

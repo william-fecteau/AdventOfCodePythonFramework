@@ -23,7 +23,8 @@ class AOCDay:
     inputFilename = ""
     outputFilename = ""
     sessionToken = ""
-    inputData = None
+    inputData = []
+    rawData = ""
 
     def __init__(self, year, dayNumber, sessionToken):
         self.year = int(year)
@@ -83,6 +84,7 @@ class AOCDay:
 
         downloadInput(self.dayNumber, self.year,
                       self.sessionToken, self.inputPath)
+        self.readInput()
 
     def readInput(self):
         # Opening filestream
